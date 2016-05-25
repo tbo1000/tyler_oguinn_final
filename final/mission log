@@ -1,0 +1,94 @@
+communications from titan.
+head to earth. build a rocketship
+rocketship specifications:
+
+        private data members
+                name, string
+                fuel, unsigned int
+
+        public function interface
+                default constructor (initial values "RS NullPointer", 1000)
+                setName,getName
+                setFuel,getFuel
+                
+sucessfully arrived on saturn:
+saturn key:959
+need to head to jupiter
+rocketship upgrade specs:
+new private data members
+                vector<unsigned int> fuelCells
+                -- each element of the vector represents a fuel cell --
+                -- with a specific amount (unsigned int) of fuel --
+
+        new public function interface
+                void addFuelCell(unsigned int fuelAmount)
+                -- add a new element to fuelCells to contain fuelAmount --
+
+                bool removeFuelCell(unsigned int cellNumber)
+                -- removes the specified cell (0-indexed) from fuelCells --
+
+                bool addFuelToCell(unsigned int cellNumber,
+                                   unsigned int fuelAmount)
+                -- add fuelAmount to the specified fuelCell (0-indexed) --
+
+                string burnFuel(unsigned int cellNumber)
+                -- zero out/burn all of the fuel in the specified cell (0-indexed) --
+                -- returns a string of asterisks representing the fuel in the cell --
+sucessfully arrived on jupiter
+jupiter key:68836362
+need to make inherited rocketship
+update base rocketship first
+ new public function interface
+                overloaded constructor (string newName, unsigned int newFuel)
+
+        convert private access modifier to protected
+        -- Ask yourself, why would you need to do this? --
+        
+special rocketship specs
+base class
+                RocketShip
+
+        private data members
+                cloaked, bool
+
+        public function interface
+                default constructor (initial values "RS Cloaky", 1000, false)
+
+                setCloaked, getCloaked
+                
+need to head to mars now
+
+sucessfully arrived on mars
+mars key:125132434
+need to make an activator
+activator specs:
+
+        private data members
+                none
+
+        public function interface
+                unsigned int getPrime (unsigned int whichPrime)
+                -- return a prime number in the series of primes, --
+                -- first prime is 2, second prime is 3, etc. --
+
+                unsigned int sumTheDigits (unsigned int value)
+                -- return the sum of the digits in a value --
+                -- reduced to a single digit --
+                -- ex: sum of digits in 99 is 9+9=18, 1+8=9, return 9 --
+                
+might have got to earth sucessfully
+earth key:3724235665
+
+launch: earth.o CinReader.o Activator.o
+	g++ -Wall -g -o launch earth.o CinReader.o Activator.o
+
+Activator: Activator.cpp
+	g++ -Wall -g -c Activator.cpp
+	
+big red button key:1128969361	
+earth key:3724235665
+mars key:125132434
+jupiter key:68836362
+saturn key:959
+
+we saved the earth from OKRA!
